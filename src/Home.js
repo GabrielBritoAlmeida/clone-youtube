@@ -8,7 +8,9 @@ import VideoCallIcon from '@material-ui/icons/VideoCall';
 import MoreVert from '@material-ui/icons/MoreVert';
 import Apps from '@material-ui/icons/Apps';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -97,17 +99,17 @@ const classes = useStyles();
               <div className={classes.drawerContainer}>
                 <List>
                     <ListItem button>
-                      <ListItemIcon> <InboxIcon /> </ListItemIcon>
+                      <ListItemIcon> <HomeIcon /> </ListItemIcon>
                       <ListItemText classes={{primary: classes.listItemText}} primary={"Inicio"} />
                     </ListItem>
 
                     <ListItem button>
-                      <ListItemIcon> <InboxIcon /> </ListItemIcon>
+                      <ListItemIcon> <WhatshotIcon /> </ListItemIcon>
                       <ListItemText classes={{primary: classes.listItemText}} primary={"Em Alta"} />
                     </ListItem>
 
                     <ListItem button>
-                      <ListItemIcon> <InboxIcon /> </ListItemIcon>
+                      <ListItemIcon> <SubscriptionsIcon /> </ListItemIcon>
                       <ListItemText classes={{primary: classes.listItemText}} primary={"Inscrições"} />
                     </ListItem>
                 </List>
