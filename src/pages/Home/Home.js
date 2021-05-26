@@ -1,5 +1,4 @@
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Toolbar, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 //Icons
 import MenuIcon from '@material-ui/icons/Menu';
@@ -15,48 +14,7 @@ import History from '@material-ui/icons/History';
 import { AddCircle } from '@material-ui/icons';
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-    backgroundColor: theme.palette.background.dark,
-  },
-  appBar: {
-    boxShadow: 'none',
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  logo: {
-    height: 25,
-  },
-  drawer: {
-    width: 240,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: 240,
-    borderRight: 'none',
-  },
-  menuIcon: {
-    paddingRight: theme.spacing(5),
-    paddingLeft: theme.spacing(6),
-  },
-  icons: {
-    paddingRight: theme.spacing(5),
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  listItemText: {
-    fontSize: 14,
-  },
-  listItem: {
-    paddingTop: 4,
-    paddingBottom: 4,
-  },
-  subheader: {
-    textTransform: 'uppercase',
-  },
-}));
-
+import { useStyles } from './styles'
 
 export function Home() {
 const classes = useStyles();

@@ -1,4 +1,4 @@
-import { Home } from './Home'
+import { Home } from './pages/Home/Home'
 import {ThemeProviderMaterial } from './styles/global'
 
 function App() {
