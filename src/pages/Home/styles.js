@@ -21,11 +21,11 @@ export const useStyles = makeStyles((theme) => ({
       borderRight: 'none',
     },
     menuIcon: {
-      paddingRight: theme.spacing(5),
-      paddingLeft: theme.spacing(6),
+      paddingRight: theme.spacing(3),
+      paddingLeft: theme.spacing(1),
     },
     icons: {
-      paddingRight: theme.spacing(5),
+      paddingRight: theme.spacing(2),
     },
     grow: {
       flexGrow: 1,
