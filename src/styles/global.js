@@ -1,23 +1,30 @@
+import { useState, cloneElement } from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
+export function ThemeProviderMaterial({children}) {
+  const [darkMode, setDarkMode] = useState(false);
 
-const theme = createMuiTheme({
+  const theme = createMuiTheme({
+    spacing: 4,
     palette: {
+      type: darkMode ? 'dark' : 'light',
       primary: {
-        main: "#f44336"
+        main: '#f44336',
       },
       secondary: {
-        main: "#3f51b5"
-      }
-    }
-  })
-
-
-export function ThemeProviderMaterial({children}) {
+        main: '#3EA6FF',
+      },
+      background: {
+        default: darkMode ? '#232323' : '#FFF',
+        dark: darkMode ? '#181818' : '#f4f6f8',
+        paper: darkMode ? '#232323' : '#FFF',
+      },
+    },
+  });
 
     return (
         <ThemeProvider theme={theme}>
-            {children}
+          {cloneElement(children, { darkMode, setDarkMode })}
         </ThemeProvider>
     )
 

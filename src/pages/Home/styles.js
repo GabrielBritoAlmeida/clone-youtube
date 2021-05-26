@@ -1,3 +1,4 @@
+
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
@@ -21,8 +22,8 @@ export const useStyles = makeStyles((theme) => ({
       borderRight: 'none',
     },
     menuIcon: {
-      paddingRight: theme.spacing(3),
-      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(6),
+      paddingLeft: theme.spacing(4),
     },
     icons: {
       paddingRight: theme.spacing(2),

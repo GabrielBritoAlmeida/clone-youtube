@@ -1,5 +1,4 @@
-import { useMemo } from 'react';
-import { AppBar, Box, Button, Divider, Drawer, Grid, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Box, Button, Divider, Drawer, Grid, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Switch, Toolbar, Typography, useTheme } from '@material-ui/core';
 
 //Icons
 import MenuIcon from '@material-ui/icons/Menu';
@@ -20,11 +19,12 @@ import { videos } from './mock'
 
 import { useStyles } from './styles'
 
-export function Home() {
-const classes = useStyles();
+export function Home({darkMode, setDarkMode}) {
 
-const recommended = useMemo(()=> {
-  return videos.map(item => (
+const classes = useStyles();
+const theme = useTheme();
+
+const recommended = videos.map(item => (
     <Grid item lg={3} md={4} sm={6} xs={12} key={item.id}>
       <Box>
         <img
@@ -55,28 +55,30 @@ const recommended = useMemo(()=> {
       </Box>
     </Grid>
   ))
-},[videos])
+
 
   return (
     <div className={classes.root}>
         <AppBar color="inherit" className={classes.appBar}>
             <Toolbar>
-                <IconButton edge="start" className={classes.menuIcon} color="inherit" aria-label="menu">
+                <IconButton edge="start" className={classes.menuIcon} aria-label="menu">
                 <MenuIcon />
                 </IconButton>
-                <img src="/images/preto.png" alt="logo do youtube" className={classes.logo}/>
+                <img src={theme.palette.type === 'dark' ? "/images/branco.png" : "/images/preto.png"} alt="logo do youtube" className={classes.logo}/>
 
                 <div className={classes.grow}/>
 
-                <IconButton className={classes.icons} color="inherit">
+                <Switch value={darkMode} onChange={() => setDarkMode(!darkMode)}/>
+
+                <IconButton className={classes.icons} >
                     <VideoCallIcon />
                 </IconButton>
 
-                <IconButton className={classes.icons} color="inherit">
+                <IconButton className={classes.icons} >
                     <Apps />
                 </IconButton>
 
-                <IconButton className={classes.icons} color="inherit">
+                <IconButton className={classes.icons} >
                     <MoreVert/>
                 </IconButton>                
 
@@ -127,7 +129,7 @@ const recommended = useMemo(()=> {
                       </ListItem>
                   </List>
 
-                  <Divider />
+                  <Divider/>
 
                   <Box p={3}>
                     <Typography variant="body2">
